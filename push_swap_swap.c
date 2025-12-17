@@ -1,36 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amaazouz <amaazouz@student.42belgium.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/03 19:38:12 by amaazouz          #+#    #+#             */
-/*   Updated: 2025/11/03 21:25:28 by amaazouz         ###   ########.fr       */
+/*   Created: 2025/12/08 18:13:42 by amaazouz          #+#    #+#             */
+/*   Updated: 2025/12/08 20:09:18 by amaazouz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_list	*ft_lstnew(int content)
+void	sa(t_list **stack_a)
 {
-	t_list	*elem;
-
-	elem = malloc(sizeof(t_list));
-	if (!elem)
-		return (NULL);
-	elem->content = content;
-	elem->next = NULL;
-	return (elem);
+	ft_swap(stack_a);
+	write(1, "sa\n", 3);
 }
-/*
-int	main(void)
+
+void	sb(t_list **stack_b)
 {
-	char	*str_content = "Salut 42";
-	t_list	*node1 = ft_lstnew(str_content);
-
-	node1->content;
-	printf("%s",(char *)node1->content);
-	return (0);
+	ft_swap(stack_b);
+	write(1, "sb\n", 3);
 }
-*/	
+
+void	ss(t_list **stack_a, t_list **stack_b)
+{
+	ft_swap(stack_a);
+	ft_swap(stack_b);
+	write(1, "ss\n", 3);
+}
