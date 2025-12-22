@@ -18,9 +18,9 @@ void	ft_swap(t_list **stack)
 	t_list	*second;
 
 	if (!stack || !*stack || !(*stack)->next)
-        return ;
-    first = *stack;
-    second = first->next;
+		return ;
+	first = *stack;
+	second = first->next;
 	first->next = second->next;
 	if (second->next)
 		second->next->prev = first;

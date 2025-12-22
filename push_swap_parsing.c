@@ -20,7 +20,7 @@ void	handle_error(void)
 
 void	valid_int(char *argv, t_list **stack)
 {
-	int	i;
+	int			i;
 	long int	nb;
 
 	i = 0;
@@ -36,33 +36,34 @@ void	valid_int(char *argv, t_list **stack)
 		i++;
 	}
 	if (check_dup(*stack, (int)nb))
-        handle_error();
+		handle_error();
 	ft_lstadd_back(stack, ft_lstnew((int)nb));
 }
 
-int double_space(char *str)
+int	double_space(char *str)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while (str[i])
-    {
-        if (str[i] == ' ' && str[i + 1] == ' ')
-            return (1);
-        i++;
-    }
-    return (0);
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] == ' ' && str[i + 1] == ' ')
+			return (1);
+		i++;
+	}
+	return (0);
 }
 
 void	check_args(int argc, char **argv, t_list **stack)
 {
-	int i;
+	int		i;
 	char	**split_argv;
 
 	i = 1;
 	if (argc <= 2 && countword(argv[1], ' ') <= 1)
 		exit(0);
-	if (argc == 2 && countword(argv[1], ' ') > 1 && argv[1][0] != ' ' && argv[1][ft_strlen(argv[1]) - 1] != ' ')
+	if (argc == 2 && countword(argv[1], ' ') > 1
+		&& argv[1][0] != ' ' && argv[1][ft_strlen(argv[1]) - 1] != ' ')
 	{
 		i = 0;
 		if (double_space(argv[1]) == 1)
@@ -74,6 +75,6 @@ void	check_args(int argc, char **argv, t_list **stack)
 	else
 	{
 		while (argv[i])
-        	valid_int(argv[i++], stack);
-	}	
+			valid_int(argv[i++], stack);
+	}
 }

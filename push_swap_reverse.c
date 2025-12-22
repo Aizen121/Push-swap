@@ -20,7 +20,7 @@ void	rra(t_list **stack_a)
 
 void	rrb(t_list **stack_b)
 {
-    reverse(stack_b);
+	reverse(stack_b);
 	write(1, "rrb\n", 4);
 }
 

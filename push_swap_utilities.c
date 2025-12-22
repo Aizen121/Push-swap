@@ -12,41 +12,6 @@
 
 #include "push_swap.h"
 
-size_t	ft_strlen(char *str)
-{
-	size_t	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
-
-long	ft_atol(char *str)
-{
-	size_t	i;
-	long	res;
-	int		sign;
-
-	i = 0;
-	res = 0;
-	sign = 1;
-	if (str[i] == '+' || str[i] == '-')
-	{
-		if (str[i] == '-')
-			sign *= -1;
-		i++;
-	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		res = res * 10 + (str[i] - '0');
-		i++;
-		if (res > 2147483648) 
-			break;
-	}
-	return (sign * res);
-}
-
 size_t	countword(char *s, char c)
 {
 	size_t	i;

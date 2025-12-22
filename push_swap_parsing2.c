@@ -37,7 +37,7 @@ int	check_dup(t_list *stack, int value)
 	return (0);
 }
 
-void	ft_lstadd_back(t_list **stack,t_list *new)
+void	ft_lstadd_back(t_list **stack, t_list *new)
 {
 	t_list	*tmp;
 
@@ -54,4 +54,3 @@ void	ft_lstadd_back(t_list **stack,t_list *new)
 	tmp->next = new;
 	new->prev = tmp;
 }
-
