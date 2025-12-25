@@ -25,6 +25,8 @@ typedef struct s_list
 	int				index;
 }	t_list;
 
+void	ft_free_tab(char **tab);
+void    ft_free_stack(t_list **stack);
 void	handle_error(void);
 void	check_args(int argc, char **argv, t_list **stack);
 int		double_space(char *str);
@@ -36,10 +38,6 @@ char	**ft_split(char *s, char c);
 long	ft_atol(char *str);
 size_t	countword(char *s, char c);
 size_t	ft_strlen(char *str);
-char	**ft_split(char *s, char c);
-
-static	char	*fill_word(char *s, char c, size_t n);
-static	void	*ft_free(char **s, size_t k);
 
 void	ft_swap(t_list **stack);
 void	ft_push(t_list **stack_a, t_list **stack_b);
@@ -64,7 +62,6 @@ void	rr(t_list **stack_a, t_list **stack_b);
 
 void	ft_index(t_list *stack);
 void	ft_radix_sort(t_list **stacka, t_list **stackb);
-int		index_max(t_list *stack);
 
 int		get_min_index(t_list *stacka);
 int		index_max(t_list *stack);

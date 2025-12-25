@@ -81,15 +81,25 @@ void	sort_five(t_list **stacka, t_list **stackb)
 		pa(stacka, stackb);
 }
 
+
 int	main(int argc, char **argv)
 {
 	t_list	*stack_a;
 	t_list	*stack_b;
+	t_list	*tmp;
 
 	stack_a = NULL;
 	stack_b = NULL;
 	check_args(argc, argv, &stack_a);
 	ft_index(stack_a);
 	push_swap(&stack_a, &stack_b);
+	tmp = stack_a;
+	while (tmp)
+	{
+		printf("%d\n", tmp->value);
+		tmp = tmp->next;
+	}
+	ft_free_stack(&stack_a);
+	ft_free_stack(&stack_b);
 	return (0);
 }
